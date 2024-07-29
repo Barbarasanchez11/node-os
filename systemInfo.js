@@ -1,2 +1,4 @@
-const {infoSis} = require("./osModule");
-const { infoRed} = require ("./networkModule")
+const getOs = require("./osModule.js");
+const { getInfonetwork} = require ("./networkModule")
+
+console.log(getInfonetwork())
