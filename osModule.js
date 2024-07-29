@@ -1,6 +1,6 @@
 const os = require('node:os')
 
-console.log(os)
+//console.log(os)
 
 function getOs () {
 
@@ -18,13 +18,13 @@ const nombre = os.platform(),
 
 return {
 
-  nombre: nombre
-  tipo : tipo
-   version : version
-   arquitectura: arquitectura
-   cpus: cpus
-   mTotal: ` ${mTotal} MB`
-   mLibre:` ${mLibre} MB`
+  nombre: nombre,
+  tipo : tipo,
+   version : version,
+   arquitectura: arquitectura,
+   cpus: cpus,
+   mTotal: ` ${mTotal} MB`,
+   mLibre:` ${mLibre} MB`,
 }
 
-module.exports = getOs;
+module.exports = getOs
