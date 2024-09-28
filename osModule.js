@@ -1,31 +1,19 @@
 const os = require("node:os")
 
-//console.log(os)
-
-function getOs () {
-
-const nombre = os.hostname(),
-      tipo =os.type(),
-      version = os.version(),
-      arquitectura = os.arch(),
-     cpus= os.cpus().length,
-     mTotal= (os.totalmem() / (1024 ** 2)).toFixed(2) + "MB",
-    mLibre= (os.freemem() / (1024 ** 2)).toFixed(2) + " MB"
 
 
-
-
-
-return {
-
-  nombre: nombre,
-  tipo : tipo,
-   version : version,
-   arquitectura: arquitectura,
-   cpus: cpus,
-   mTotal: ` ${mTotal} MB`,
-   mLibre:` ${mLibre} MB`,
-}
+function obtenerInformacionSistema() {
+  return {
+    Nombre: os.platform(),
+    Tipo: os.type(),
+    Versión: os.version(),
+    Arquitectura: os.arch(),
+    CPUs: os.cpus().length,
+    MemoriaTotal: `${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`,
+    MemoriaLibre: `${(os.freemem() / 1024 / 1024).toFixed(2)} MB`,
+  };
 }
 
-module.exports = getOs
+module.exports = {
+  obtenerInformacionSistema,
+};
